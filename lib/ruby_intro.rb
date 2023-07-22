@@ -46,11 +46,13 @@ def starts_with_consonant? s
   # YOUR CODE HERE
   return false if s.empty?
   char_1st = s[0].downcase
-  return char_1st?(/[a-z]/) && !char_1st.match?(/[aeiou]/)
+  return char_1st.match?(/[a-z]/) && !char_1st.match?(/[aeiou]/)
 end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
+  return false unless s.match?(/\A[01]+\z/)
+  return s[-2..-1] == '00' || s == '0'
 end
 
 # Part 3
